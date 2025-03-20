@@ -6,13 +6,11 @@
 
 Склонируйте репозиторий (или скачайте архив с файлами проекта):
 
-git clone https://github.com/yourusername/yourrepo.git
+git clone https://github.com/Alpi157/robotek_chatbot.git
 
 (либо используйте GitHub Desktop, либо скачайте .zip-архив и распакуйте его)
 
 Перейдите в папку проекта:
-
-cd yourrepo
 
 Создайте виртуальное окружение (опционально, но рекомендуется):
 
