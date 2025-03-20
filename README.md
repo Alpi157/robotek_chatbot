@@ -1,6 +1,6 @@
 **Robotek Chatbot**
 
-Это чат-бот для WhatsApp с использованием библиотеки whatsapp-chatbot-python. Бот реализует логику выбора языка (русский/казахский), отвечает на вопросы об образовательных курсах в школе робототехники «Роботек», учитывает семестры, базу знаний, а также умеет распознавать голосовые сообщения через Whisper.
+Это чат-бот для WhatsApp с использованием библиотеки whatsapp-chatbot-python. Бот реализует логику выбора языка (русский/казахский), отвечает на вопросы, учитывает семестры, базу знаний, а также умеет распознавать голосовые сообщения через Whisper.
 
 **1. Подготовка окружения**
 
@@ -17,7 +17,9 @@ cd yourrepo
 Создайте виртуальное окружение (опционально, но рекомендуется):
 
 python -m venv venv
+
 source venv/bin/activate  # macOS/Linux
+
 .\venv\Scripts\activate   # Windows
 
 Установите зависимости:
@@ -45,8 +47,11 @@ python main.py
 В консоли появится лог:
 
 [DEBUG] Запуск бота...
+
 2025-XX-XX XX:XX:XX:whatsapp-chatbot-python:INFO:Deleted old incoming notifications.
+
 2025-XX-XX XX:XX:XX:whatsapp-chatbot-python:INFO:Started receiving incoming notifications.
+
 ...
 
 Это означает, что бот начал прослушивать входящие сообщения.
@@ -101,6 +106,7 @@ python3 --version
 Если Python не установлен, установите:
 
 sudo apt-get update
+
 sudo apt-get install python3 python3-pip
 
 При желании можно установить Git для клонирования репозитория:
@@ -112,6 +118,7 @@ sudo apt-get install git
 Вариант A: Клонировать напрямую из GitHub:
 
 git clone https://github.com/yourusername/yourrepo.git
+
 cd yourrepo
 
 Вариант B: Скопировать файлы (включая main.py, requirements.txt, и т.д.) по SSH/SCP или любым другим удобным способом (например, FileZilla, WinSCP).
@@ -120,7 +127,9 @@ cd yourrepo
 Так вы сможете «изолировать» зависимости проекта.
 
 python3 -m venv venv
+
 source venv/bin/activate
+
 При этом в консоли появится префикс (venv).
 
 Установите зависимости
@@ -142,8 +151,11 @@ python main.py
 В консоли вы увидите что-то вроде:
 
 [DEBUG] Запуск бота...
+
 2025-XX-XX XX:XX:XX:whatsapp-chatbot-python:INFO:Deleted old incoming notifications.
+
 2025-XX-XX XX:XX:XX:whatsapp-chatbot-python:INFO:Started receiving incoming notifications.
+
 ...
 Это означает, что бот запущен и слушает входящие уведомления.
 
@@ -157,17 +169,27 @@ python main.py
 Создайте юнит-файл, например /etc/systemd/system/robotekbot.service:
 
 [Unit]
+
 Description=Robotek Chatbot
+
 After=network.target
 
+
 [Service]
+
 Type=simple
+
 User=root
+
 WorkingDirectory=/путь/до/yourrepo
+
 ExecStart=/путь/до/yourrepo/venv/bin/python /путь/до/yourrepo/main.py
+
 Restart=always
 
+
 [Install]
+
 WantedBy=multi-user.target
 
 Замените /путь/до/yourrepo на реальный путь к вашему проекту, а также уточните User=.
@@ -175,12 +197,16 @@ WantedBy=multi-user.target
 Активируйте и запустите службу:
 
 sudo systemctl daemon-reload
+
 sudo systemctl enable robotekbot
+
 sudo systemctl start robotekbot
+
 
 Проверьте статус:
 
 systemctl status robotekbot
+
 Если всё в порядке, сервис будет работать в фоне. При сбое или ребуте сервера он автоматически перезапустится.
 
 
