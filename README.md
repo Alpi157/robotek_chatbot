@@ -10,7 +10,7 @@ git clone https://github.com/Alpi157/robotek_chatbot.git
 
 (либо используйте GitHub Desktop, либо скачайте .zip-архив и распакуйте его)
 
-Перейдите в папку проекта:
+Перейдите в папку проекта
 
 Создайте виртуальное окружение (опционально, но рекомендуется):
 
@@ -115,9 +115,9 @@ sudo apt-get install git
 
 Вариант A: Клонировать напрямую из GitHub:
 
-git clone https://github.com/yourusername/yourrepo.git
+git clone https://github.com/Alpi157/robotek_chatbot.git
 
-cd yourrepo
+cd robotek_chatbot
 
 Вариант B: Скопировать файлы (включая main.py, requirements.txt, и т.д.) по SSH/SCP или любым другим удобным способом (например, FileZilla, WinSCP).
 Убедитесь, что все файлы лежат в одной папке.
