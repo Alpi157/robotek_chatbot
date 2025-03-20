@@ -7,26 +7,34 @@
 Склонируйте репозиторий (или скачайте архив с файлами проекта):
 
 git clone https://github.com/yourusername/yourrepo.git
+
 (либо используйте GitHub Desktop, либо скачайте .zip-архив и распакуйте его)
 
 Перейдите в папку проекта:
+
 cd yourrepo
 
 Создайте виртуальное окружение (опционально, но рекомендуется):
+
 python -m venv venv
 source venv/bin/activate  # macOS/Linux
 .\venv\Scripts\activate   # Windows
 
 Установите зависимости:
+
 pip install -r requirements.txt
+
 В результате будут установлены необходимые пакеты: whatsapp-chatbot-python и прочие зависимости.
+
 
 **2. Настройка переменных и ключей**
 
 В файле main.py есть несколько важных переменных:
 
 openai.api_key = 'апи когда будет сюда' Замените строку
+
 на реальный ключ (например, "sk-...").
+
 
 **3. Запуск бота**
 
@@ -40,25 +48,33 @@ python main.py
 2025-XX-XX XX:XX:XX:whatsapp-chatbot-python:INFO:Deleted old incoming notifications.
 2025-XX-XX XX:XX:XX:whatsapp-chatbot-python:INFO:Started receiving incoming notifications.
 ...
+
 Это означает, что бот начал прослушивать входящие сообщения.
+
 
 **4. Файлы проекта**
 
 main.py
+
 Основной скрипт, содержащий всю логику бота:
 
 Подключение к GPT
 Настройка Green API
 Обработчики входящих (@bot.router.message()) и исходящих сообщений (@bot.router.outgoing_message())
 Логика определения языка, выдачи приветствия, передачи запроса менеджеру и т.д.
+
 requirements.txt
+
 Перечень зависимостей (библиотек Python), необходимых для работы бота.
 
 known_clients.json
+
 Файл, в котором хранится список (set) известных клиентов (чтобы отправлять приветствие только один раз). Если файл отсутствует, он будет создан автоматически при первой записи.
 
 README.md
+
 Текущий файл с инструкциями по запуску.
+
 
 **Изменение модели**
 
@@ -81,6 +97,7 @@ MODEL = "gpt-4o"
 Убедитесь, что на сервере установлен Python 3.7+ (лучше 3.9 или 3.10). Проверить версию можно командой:
 
 python3 --version
+
 Если Python не установлен, установите:
 
 sudo apt-get update
@@ -89,6 +106,7 @@ sudo apt-get install python3 python3-pip
 При желании можно установить Git для клонирования репозитория:
 
 sudo apt-get install git
+
 Скопируйте проект на сервер
 
 Вариант A: Клонировать напрямую из GitHub:
@@ -109,9 +127,11 @@ source venv/bin/activate
 Выполните команду:
 
 pip install -r requirements.txt
+
 Убедитесь, что все пакеты (включая whatsapp-chatbot-python, openai и другие) установились без ошибок.
 
 Настройте переменные (в файле main.py):
+
 openai.api_key = "ваш апи"
 
 Запустите бота
@@ -128,6 +148,7 @@ python main.py
 Это означает, что бот запущен и слушает входящие уведомления.
 
 Проверьте работу
+
 
 **Автозапуск и постоянная работа**
 
